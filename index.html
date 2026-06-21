@@ -12,23 +12,22 @@
     rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- CSS الخارجي -->
+  <!-- ملف CSS الخارجي -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
   <!-- ================================================================
-     CUSTOM CURSOR - قلب يتبع الماوس
+     CUSTOM CURSOR
      ================================================================ -->
   <div id="cursor">💗</div>
 
   <!-- ================================================================
-     LOADING SCREEN - شاشة التحميل
+     LOADING SCREEN
      ================================================================ -->
   <div id="loading-screen">
     <div class="loading-heart">💖</div>
-    <!-- ====== عدّل نص التحميل هنا ====== -->
     <div class="loading-text">جاري التحضير لمفاجأتك...</div>
     <div class="loading-bar-wrap">
       <div class="loading-bar"></div>
@@ -36,15 +35,14 @@
   </div>
 
   <!-- ================================================================
-     PARTICLES CANVAS - الخلفية المتحركة
+     PARTICLES CANVAS
      ================================================================ -->
   <canvas id="particles-canvas"></canvas>
 
   <!-- ================================================================
-     NAVIGATION - شريط التنقل
+     NAVIGATION
      ================================================================ -->
   <nav id="navbar">
-    <!-- ====== عدّل الاسم هنا ====== -->
     <div class="nav-logo">💗 [حبيبة قلب أحمد ]</div>
     <button class="hamburger" id="hamburger" aria-label="القائمة">
       <span></span><span></span><span></span>
@@ -61,27 +59,24 @@
   </nav>
 
   <!-- ================================================================
-     1. HERO SECTION - الصفحة الرئيسية
+     1. HERO SECTION
      ================================================================ -->
   <section id="hero">
-    <!-- الأشكال العائمة للديكور -->
     <div class="hero-shape" style="width:300px;height:300px;top:-100px;right:-80px;animation-delay:0s;"></div>
     <div class="hero-shape" style="width:200px;height:200px;bottom:50px;left:-60px;animation-delay:2s;"></div>
     <div class="hero-shape" style="width:150px;height:150px;bottom:150px;right:10%;animation-delay:4s;"></div>
 
     <div class="hero-badge">🎂 عيد ميلاد سعيد 🎂</div>
 
-    <!-- ====== ✏️ عدّل اسم الخطيبة هنا ====== -->
-    <h1 class="hero-name">[ حبيبة قلب أحمد]</h1>
+    <!-- ====== ✏️ عدّل الاسم هنا ====== -->
+    <h1 class="hero-name">[حبيبة قلب أحمد]</h1>
 
     <p class="hero-subtitle">في يومك الأجمل، أُهديكِ كل حبي وأحلى كلماتي 🌸</p>
 
-    <!-- Typewriter للعناوين المتحركة -->
     <div class="typewriter-wrap">
       <span id="typewriter"></span>
     </div>
 
-    <!-- ====== ✏️ عداد عيد الميلاد - التاريخ في script.js في CONFIG ====== -->
     <div class="hero-counter" id="birthday-counter">
       <div class="hero-counter-item">
         <span class="hero-counter-num" id="cnt-days">--</span>
@@ -100,7 +95,7 @@
         <span class="hero-counter-label">ثانية</span>
       </div>
       <div class="hero-counter-item" id="cnt-label-wrap" style="min-width:140px;">
-        <span class="hero-counter-num" id="cnt-label">⏳</span>
+        <span class="hero-counter-num" id="cnt-label" style="font-size:1rem;">⏳</span>
         <span class="hero-counter-label">للعيد القادم</span>
       </div>
     </div>
@@ -111,7 +106,7 @@
   </section>
 
   <!-- ================================================================
-     2. STORY / TIMELINE SECTION - قصتنا
+     2. STORY / TIMELINE SECTION
      ================================================================ -->
   <section id="story">
     <div class="section-title reveal">
@@ -195,14 +190,14 @@
   </section>
 
   <!-- ================================================================
-     3. GALLERY SECTION - الذكريات
+     3. GALLERY SECTION
      ================================================================ -->
   <section id="gallery">
     <div class="section-title reveal">
       <h2>ذكرياتنا الجميلة 📸</h2>
       <div class="divider"><i class="fas fa-camera"></i></div>
       <p>كل صورة تحكي قصة، وكل لحظة كانت معكِ لا تُنسى</p><br><br>
-      <p>  دوسي دوسه مطوله علي الصوره</p>
+      <p> دوسي دوسه مطوله علي الصوره</p>
     </div>
 
     <div class="gallery-grid">
@@ -267,16 +262,23 @@
     </div>
   </section>
 
-  <!-- Lightbox لعرض الصور مكبرة -->
+  <!-- Lightbox -->
   <div id="lightbox">
     <button id="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-    <canvas id="lightbox-canvas" style="display:none;"></canvas>
-    <div id="lightbox-bg"></div>
+    <img id="lightbox-img" src="" alt="" style="display:none;" />
+    <div id="lightbox-bg" style="
+    max-width:80vw;max-height:75vh;
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:5rem;
+    background:linear-gradient(135deg,#C8526B,#D4AF37);
+    padding:40px 60px;
+  ">📸</div>
     <div id="lightbox-caption"></div>
   </div>
 
   <!-- ================================================================
-     4. VIDEO SECTION - قسم الفيديو
+     4. VIDEO SECTION (فيديو محلي من اللاب)
      ================================================================ -->
   <section id="video-section">
     <div class="section-title reveal">
@@ -325,7 +327,7 @@
   </section>
 
   <!-- ================================================================
-     5. LOVE REASONS SECTION - أسباب الحب
+     5. LOVE REASONS SECTION
      ================================================================ -->
   <section id="love-reasons">
     <div class="section-title reveal">
@@ -414,7 +416,7 @@
   </section>
 
   <!-- ================================================================
-     6. LETTER SECTION - الرسالة
+     6. LETTER SECTION
      ================================================================ -->
   <section id="letter">
     <div class="section-title reveal">
@@ -455,13 +457,12 @@
   </section>
 
   <!-- ================================================================
-     7. COUNTER SECTION - عداد الأيام
+     7. COUNTER SECTION
      ================================================================ -->
   <section id="counter">
     <div class="section-title reveal">
       <h2>وقت معاً ⏰</h2>
       <div class="divider"><i class="fas fa-clock"></i></div>
-      <!-- ====== ✏️ التاريخ في script.js - CONFIG.relationshipStart ====== -->
       <p>من أول يوم قابلتكِ فيه حتى الآن</p>
     </div>
 
@@ -490,25 +491,20 @@
   </section>
 
   <!-- ================================================================
-     8. FOOTER - الذيل
+     8. FOOTER
      ================================================================ -->
   <footer>
     <span class="footer-heart">💖</span>
-
-    <!-- ====== ✏️ عدّل نص الفوتر هنا ====== -->
-    <p class="footer-quote">
-      "في كل نبضة قلب، أفكر فيكِ... في كل لحظة سعيدة، أتمنى أن تكوني بجانبي."
-    </p>
+    <p class="footer-quote">"في كل نبضة قلب، أفكر فيكِ... في كل لحظة سعيدة، أتمنى أن تكوني بجانبي."</p>
 
 
-
-    <!-- ====== ✏️ عدّل الاسم والسنة هنا ====== -->
+    <!-- ✏️ عدّل الاسم والسنة هنا -->
     <div class="footer-copy">
       صُنع بكل الحب 💗 لـ [حبيبة قلب أحمد] &nbsp;|&nbsp; <span id="current-year"></span>
     </div>
   </footer>
 
-  <!-- JavaScript الخارجي -->
+  <!-- ملف JavaScript الخارجي -->
   <script src="script.js"></script>
 
 </body>
